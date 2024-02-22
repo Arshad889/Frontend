@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(0, 0, 1);
+            color: #ffffff;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+
+        }
+        .stopwatch{
+            background-color: rgb(0, 0, 0, 0.9);
+            padding: 20px 24px;
+            border-radius: 10px;
+        }
+        .timerdisplay{
+            font-size: 50px;
+            font-weight: 900;
+        }
+        .buttons{
+            margin-top: 20px;
+        }
+        .btn{
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: #fff;
+            background-color: aqua;
+            padding: 12px 24px;
+            margin-inline: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="stopwatch">
+        <div class="timerdisplay">00 : 00 : 00</div>
+
+        </div>
+        <div class="button">
+            <button id="stopBtn"class="btn" style="color :red;">stop</button>
+            <button id="startBtn"nclass="btn" style="color : green; ">start</button>
+            <button id="resetbtn"class="btn" style="color : blue;">Reset</button>
+        </div>
+        <script src="script.jp"></script>
+    </div>
+    <script>
+        let timerdisplay = document.queryselector('timerdisplay');
+        let stopBtn = document.getElementById('stopBtn');
+        let startBtn = document.getElementById('startBtn');
+        let resetBtn = document.getElementById('resetBtn');
+
+        let msec = 00;
+        let secs = 00;
+        let mins = 00;
+
+        let timerId = null;
+
+        function startTimer(){
+            msec++;
+            if(msec == 100){
+                msec = 0;
+                secs++;
+                if(secs == 60){
+                    secs == 0;
+                    msec++;
+                }
+            }
+        }
+    </script>
+
+    
+    
+</body>
+</html>
